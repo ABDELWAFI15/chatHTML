@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat App</title>
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #698eb9;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 200%;
+            height: 500px;
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 5px;
+            justify-content: center;
+            align-items: center;
+            border: .2em outset #F0F8FF;
+        }
+        
+        .container .title {
+            font-size: 25px;
+            text-align: center;
+            position: relative;
+            font-weight: 500;
+        }
+        
+        .color {
+            margin-left: 60%;
+        }
+        
+        #message-container {
+            width: 90%;
+            height: 75%;
+            max-width: 200px;
+            max-height: 400px;
+        }
+        
+        button {
+            background-color: #245582;
+            border: none;
+            color: white;
+            margin-left: 05%;
+            padding: 15px 32px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        
+        #message-container div {
+            background-color: #CCC;
+            padding: 5px;
+        }
+        
+        #message-container div:nth-child(2n) {
+            background-color: #FFF;
+        }
+        
+        #send-container {
+            position: relative;
+            border-color: #93b2dd;
+            padding-bottom: 30px;
+            background-color: white;
+            max-width: 1200px;
+            width: 80%;
+            height: 70px;
+            display: flex;
+        }
+        
+        p {
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(110, 149, 255);
+        }
+        
+        #message-input {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">CHAT</div>
+        <div class="color">
+            <span>Background Color</span>
+            <input type="color" id="clr">
+        </div>
+        <div id="message-container"></div>
+        <form id="send-container">
+            <input type="text" id="message-input">
+            <p id="demo"></p>
+            <button type="submit" id="send-button" onclick='getLength()'>Send</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
